@@ -1,0 +1,52 @@
+<html>
+    <head>
+
+        <title>Lista de Números</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="viewport-fit=cover, width=device-width, 
+        initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <link rel="stylesheet" href="/estatico/css/lista.css">
+
+    </head>
+    <body>
+        <header>
+            <h3> Lista de Registros </h3>
+        </header>
+        
+        <img id="legenda" src="/estatico/img/legenda.png">
+
+        <table id="registros" cellpadding="3px">
+
+            <div id="tableHeader">
+
+                <tr>
+                    <th>ID</th>
+                    <th>Telefone</th>
+                    <th>Status</th>
+                    <th>Editar</th>
+                    <!-- <td>Remover</td> -->  
+                </tr>
+
+            </div>
+            
+            <div id="tableLine">
+
+                <tr id="registro_${registro.id}" for (registro in data.registros)> 
+                    <td>${registro.id}</td>
+                    <td>${registro.telefone}</td>
+                    <td><img src="/estatico/img/${registro.status}.png" id="tableIcon"> </td>
+                    <td><a href="/lista/form/${registro.id}">Editar</a></td> 
+                    <!-- <td><a href="#" data-ref="${registro.id}" data-type="remocao">Remover</a></td> -->
+                </tr>
+
+            </div>
+            
+        </table> 
+
+        <button id="btnForm"></button>
+
+        <script src="/estatico/js/btnForm.js"></script>
+        <!-- <script src="/estatico/js/remove-livro.js"></script> -->
+
+    </body> 
+</html>
